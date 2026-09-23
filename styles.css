@@ -319,430 +319,408 @@ a{color:inherit}#particles{position:fixed;inset:0;width:100%;height:100%;z-index
 
 
 /* =========================================================
-   MOBILE OPTIMIZATION — desktop styles above remain unchanged
-   Breakpoint: 900px and below
-   Designed for 360–430px phones and small tablets.
+   FINAL PROJECT MOTION PASS — DESKTOP + MOBILE
+   The card layouts stay the same; only the artwork inside
+   each project cover is refined and animated.
 ========================================================= */
-@media (max-width:900px){
 
-  html{width:100%;overflow-x:hidden}
-  body{width:100%;min-width:0;overflow-x:hidden}
-  main{width:100%;min-width:0}
-  img,svg,canvas,video{max-width:100%}
-
-  /* Header: compact, touch-friendly mobile navigation */
-  .nav{
-    height:64px;
-    padding:0 20px;
-  }
-  .brand{font-size:19px}
-  .menu{
-    width:44px;
-    height:44px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    padding:7px;
-    margin:0;
-    border:1px solid #333;
-    border-radius:9px;
-    cursor:pointer;
-  }
-  .menu span{
-    width:22px;
-    height:1px;
-    margin:3px 0;
-    transition:transform .25s ease,opacity .25s ease;
-  }
-  .nav.open .menu span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .nav.open .menu span:nth-child(2){opacity:0}
-  .nav.open .menu span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .nav.open nav{
-    top:64px;
-    left:0;
-    right:0;
-    padding:16px 20px 22px;
-    gap:0;
-    border-top:0;
-    box-shadow:0 24px 50px -35px #000;
-  }
-  .nav.open nav a{
-    display:flex;
-    align-items:center;
-    min-height:50px;
-    padding:7px 0;
-    font-size:11px;
-    border-bottom:1px solid #20201d;
-  }
-  .nav.open nav a:last-child{border-bottom:0}
-
-  /* Hero: content first, orbit becomes a dedicated mobile visual below it */
-  .hero{
-    min-height:0;
-    height:auto;
-    padding:116px 20px 390px;
-    display:block;
-    overflow:hidden;
-    background:
-      radial-gradient(circle at 78% 30%,rgba(202,255,71,.075),transparent 32%);
-  }
-  .hero:after{
-    background-size:55px 55px;
-    opacity:.65;
-  }
-  .hero-grid{inset:-20%;animation-duration:32s}
-  .hero-copy{
-    position:relative;
-    z-index:8;
-    width:100%;
-    max-width:680px;
-  }
-  .eyebrow{
-    display:block;
-    max-width:100%;
-    line-height:1.5;
-    font-size:9px;
-  }
-  .hero h1{
-    font-size:clamp(54px,16.5vw,78px);
-    line-height:.86;
-    letter-spacing:-.075em;
-    margin:24px 0 26px;
-  }
-  .hero-sub{
-    width:100%;
-    max-width:520px;
-    font-size:14px;
-    line-height:1.75;
-    color:#999;
-  }
-  .hero-actions{
-    width:100%;
-    gap:9px;
-    margin-top:25px;
-  }
-  .hero-actions .button{
-    min-height:46px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:13px 15px;
-  }
-
-  /* Mobile orbit: centered below the introduction, never over the copy */
-  .hero-orbit{
-    width:390px;
-    height:390px;
-    min-width:390px;
-    min-height:390px;
-    left:50%;
-    right:auto;
-    top:auto;
-    bottom:28px;
-    transform:translateX(-50%);
-    opacity:.92;
-    z-index:5;
-    contain:layout paint;
-  }
-  .hero-orbit .orbit-halo{inset:-10%;filter:blur(18px)}
-  .hero-orbit .ring-two{inset:56px}
-  .hero-orbit .ring-three{inset:112px}
-  .hero-orbit .orbit-axis.axis-horizontal{width:80%}
-  .hero-orbit .orbit-axis.axis-vertical{height:80%}
-  .hero-orbit .orbit-track:before{
-    width:81%;
-    height:51%;
-  }
-  .hero-orbit .orbit-node{
-    width:72px;
-    height:72px;
-  }
-  .hero-orbit .orbit-node b{font-size:10px}
-  .hero-orbit .orbit-node small{display:none}
-  .hero-orbit .core{
-    width:100px;
-    height:100px;
-  }
-  .hero-orbit .core b{font-size:27px}
-  .hero-orbit .core small{font-size:7px}
-  .hero-orbit label{display:none}
-  .hero-orbit .satellite{display:none}
-
-  .status{
-    position:absolute;
-    left:20px;
-    right:20px;
-    bottom:18px;
-    width:auto;
-    font-size:8px;
-    line-height:1.5;
-    z-index:8;
-  }
-  .status span{margin-left:10px}
-  .scroll-note{display:none}
-
-  /* Ticker stays contained instead of creating page-width overflow */
-  .ticker{
-    width:100%;
-    overflow:hidden;
-    white-space:nowrap;
-  }
-
-  /* Sections */
-  .section{
-    width:100%;
-    padding:82px 20px;
-    overflow:hidden;
-  }
-  .section-label{
-    margin-bottom:42px;
-    font-size:9px;
-  }
-  .about-layout,.journey-grid,.skills-layout,.work-head{
-    width:100%;
-    min-width:0;
-    grid-template-columns:minmax(0,1fr);
-    gap:36px;
-  }
-  .about-layout>h2,
-  .work-head h2,
-  .journey-intro h2,
-  .skills-layout>h2{
-    font-size:clamp(43px,12.5vw,62px);
-    line-height:.92;
-    overflow-wrap:normal;
-  }
-  .about-text{font-size:14px;line-height:1.75}
-  .about-text>strong{
-    font-size:clamp(24px,7vw,31px);
-    line-height:1.12;
-  }
-  .facts{
-    gap:20px 28px;
-    margin-top:32px;
-  }
-  .facts strong{font-size:15px}
-  .facts span{font-size:8px}
-
-  /* Work */
-  .work-head p,.journey-intro p{
-    max-width:100%;
-    font-size:14px;
-  }
-  .projects{
-    grid-template-columns:minmax(0,1fr);
-    gap:14px;
-    margin-top:48px;
-  }
-  .project,
-  .project.wide,
-  .project.featured{
-    grid-column:auto;
-    width:100%;
-    min-width:0;
-    min-height:0;
-  }
-  .project-visual{
-    height:220px;
-    min-height:220px;
-  }
-  .project-info{
-    padding:22px 20px 25px;
-  }
-  .project-number{
-    top:15px;
-    left:16px;
-    font-size:8px;
-  }
-  .tags{
-    gap:6px;
-    font-size:8px;
-  }
-  .tags span{padding:5px 6px}
-  .project h3{
-    font-size:clamp(30px,9vw,40px);
-    line-height:.95;
-    margin:18px 0 13px;
-  }
-  .project p{
-    font-size:13px;
-    line-height:1.7;
-    margin-bottom:0;
-  }
-  .stack{
-    font-size:8px;
-    line-height:1.6;
-    margin-top:19px;
-  }
-
-  /* Project artwork scales independently on narrow screens */
-  .vision>span,.bus>span,.game>span,.forecast>span,.nexus>span{
-    font-size:clamp(58px,19vw,82px);
-  }
-  .vision i{
-    width:150px;
-    height:105px;
-  }
-  .faces{gap:7px}
-  .faces i{
-    width:52px;
-    height:70px;
-  }
-  .face>span{left:18px;top:18px!important}
-  .face>span:nth-child(2){left:18px;top:34px!important}
-  .face small{right:15px!important;bottom:15px!important}
-  .bus{padding:28px}
-  .bus>span{left:24%;top:31%;font-size:78px}
-  .bus>b{right:16px;top:17px}
-  .bus:after{left:12%;width:76%}
-  .game>span{font-size:62px}
-  .game i{width:120px;height:120px}
-  .forecast{padding:28px;gap:18px}
-  .forecast .chart{height:105px;width:100%;gap:4px}
-  .forecast small{font-size:7px;bottom:14px}
-  .nexus{padding:28px}
-  .nexus>span{font-size:82px}
-  .nexus>b{font-size:23px}
-
-  /* Journey / timeline */
-  .timeline{margin-top:10px}
-  .time-item{
-    grid-template-columns:1fr;
-    gap:9px;
-    padding:0 0 38px 22px;
-  }
-  .time-item>span{font-size:9px}
-  .time-item h3{font-size:25px;margin-bottom:8px}
-  .time-item p{font-size:13px;line-height:1.7}
-
-  /* TEDx */
-  .tedx{padding-top:0}
-  .tedx-card{
-    width:100%;
-    min-height:0;
-    padding:28px 22px;
-    gap:25px;
-    grid-template-columns:minmax(0,1fr);
-  }
-  .tedx-mark{font-size:62px}
-  .tedx-copy h2{
-    font-size:clamp(35px,10vw,48px);
-    line-height:.95;
-  }
-  .tedx-copy p{font-size:14px}
-  .tedx-copy span,.tedx-side{font-size:8px}
-  .tedx-side{text-align:left}
-
-  /* Skills */
-  .skill-groups{
-    width:100%;
-    grid-template-columns:minmax(0,1fr);
-    gap:27px;
-  }
-  .skill-groups h3{font-size:10px}
-  .skill-groups p{font-size:13px;line-height:1.7}
-  .skill-cloud{
-    gap:6px;
-    margin-top:48px;
-  }
-  .skill-cloud span{
-    padding:8px 10px;
-    font-size:8px;
-  }
-
-  /* Philosophy */
-  .philosophy .section-label{margin-bottom:38px}
-  .principles{
-    width:100%;
-    grid-template-columns:minmax(0,1fr);
-    gap:38px;
-  }
-  .principles h3{
-    font-size:clamp(36px,10vw,48px);
-    margin:17px 0 12px;
-  }
-  .principles p{
-    max-width:100%;
-    font-size:13px;
-    line-height:1.7;
-  }
-
-  /* Contact */
-  .contact{
-    min-height:0;
-    padding-top:100px;
-    padding-bottom:65px;
-  }
-  .contact h2{
-    font-size:clamp(52px,15vw,72px);
-    line-height:.86;
-    margin:22px 0 28px;
-  }
-  .contact-sub{
-    max-width:100%;
-    font-size:14px;
-    line-height:1.7;
-  }
-  .contact-actions{
-    margin-top:38px;
-    display:flex;
-    align-items:flex-start;
-    flex-direction:column;
-    gap:16px;
-  }
-  .big-link{
-    display:block;
-    max-width:100%;
-    font-size:clamp(19px,5.5vw,26px);
-    line-height:1.25;
-    overflow-wrap:anywhere;
-  }
-  .copy-link{
-    min-height:42px;
-    padding:10px 13px;
-  }
-  .footer-row{
-    margin-top:65px;
-    padding-top:18px;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:9px;
-    font-size:7px;
-  }
-
-  /* Disable desktop-only hover/drag effects on touch screens */
-  .project:hover{
-    transform:none;
-    box-shadow:none;
-  }
-  .skill-cloud span:hover{
-    transform:none;
-  }
-
-  /* Smaller particle workload on phones; desktop remains unchanged */
-  #particles{opacity:.65}
-
-  /* Respect devices with very short screens */
-  @media (max-height:700px){
-    .hero{padding-top:102px;padding-bottom:360px}
-  }
+/* --- YOLO / OBJECT DETECTION --- */
+.project-visual.vision{
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 50% 48%,rgba(202,255,71,.13),transparent 30%),
+    linear-gradient(135deg,#080b08,#11150e 58%,#080908);
+}
+.project-visual.vision:before{
+  background:
+    linear-gradient(rgba(202,255,71,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(202,255,71,.035) 1px,transparent 1px);
+  background-size:36px 36px;
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 20%,#000 80%,transparent 100%);
+}
+.project-visual.vision>span{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  font-size:clamp(58px,7vw,94px);
+  line-height:1;
+  letter-spacing:-.1em;
+  color:#f1f1ec;
+  text-shadow:0 0 35px rgba(202,255,71,.10);
+  z-index:2;
+}
+.vision-box{
+  position:absolute;
+  border:1px solid rgba(202,255,71,.82);
+  z-index:4;
+  animation:visionBoxFloat 4.8s ease-in-out infinite;
+}
+.vision-box:before{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  border:1px solid rgba(202,255,71,.12);
+}
+.vision-box i{
+  position:absolute;
+  width:8px;height:8px;
+  border:1px solid var(--lime);
+  background:#0a0c09;
+  left:-5px;top:-5px;
+}
+.vision-box em{
+  position:absolute;
+  left:6px;top:-18px;
+  font:8px "DM Mono";
+  color:var(--lime);
+  white-space:nowrap;
+  font-style:normal;
+  letter-spacing:.06em;
+}
+.box-a{width:178px;height:112px;left:calc(50% - 89px);top:calc(50% - 56px);animation-delay:-1.2s}
+.box-b{width:92px;height:72px;left:calc(50% + 55px);top:calc(50% - 82px);opacity:.42;animation-delay:-3.2s}
+.vision-scan{
+  position:absolute;
+  left:8%;right:8%;top:28%;
+  height:1px;
+  background:var(--lime);
+  box-shadow:0 0 16px var(--lime),0 0 35px rgba(202,255,71,.5);
+  z-index:5;
+  animation:visionScan 3.4s ease-in-out infinite;
+}
+.vision>b{
+  position:absolute;
+  right:24px;top:22px;
+  font:9px "DM Mono";
+  letter-spacing:.12em;
+  color:var(--lime);
+  z-index:6;
+}
+@keyframes visionScan{
+  0%,100%{transform:translateY(-12px);opacity:.15}
+  50%{transform:translateY(120px);opacity:1}
+}
+@keyframes visionBoxFloat{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(3px,-5px,0) scale(1.018)}
 }
 
-/* Extra-narrow phones (e.g. 320–359px) */
-@media (max-width:359px){
-  .nav{padding:0 16px}
-  .hero{padding-left:16px;padding-right:16px;padding-bottom:365px}
-  .section{padding-left:16px;padding-right:16px}
-  .hero h1{font-size:17vw}
-  .hero-orbit{width:350px;height:350px;min-width:350px;min-height:350px}
-  .hero-orbit .ring-two{inset:50px}
-  .hero-orbit .ring-three{inset:100px}
-  .hero-orbit .orbit-node{width:64px;height:64px}
-  .hero-orbit .core{width:88px;height:88px}
-  .hero-orbit .core b{font-size:24px}
-  .hero-orbit .core small{font-size:6px}
-  .project-visual{height:205px;min-height:205px}
-  .about-layout>h2,.work-head h2,.journey-intro h2,.skills-layout>h2{font-size:clamp(39px,12.5vw,52px)}
+/* --- BUS MAPPING / LIVE ROUTE --- */
+.project-visual.bus{
+  padding:0;
+  justify-content:initial;
+  align-items:initial;
+  background:
+    radial-gradient(circle at 23% 72%,rgba(202,255,71,.13),transparent 27%),
+    linear-gradient(135deg,#080b09,#12170e 62%,#080a08);
+}
+.bus-map{
+  position:absolute;
+  inset:28px 25px 35px;
+  width:calc(100% - 50px);
+  height:calc(100% - 63px);
+  overflow:visible;
+  z-index:2;
+}
+.bus-map .route{
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.bus-map .route-bg{stroke:rgba(202,255,71,.10);stroke-width:9}
+.bus-map .route-main{
+  stroke:var(--lime);
+  stroke-width:2.2;
+  stroke-dasharray:.025 .035;
+  animation:routeFlow 5s linear infinite;
+  filter:drop-shadow(0 0 5px rgba(202,255,71,.38));
+}
+.bus-map .route-alt{stroke:rgba(202,255,71,.20);stroke-width:1;stroke-dasharray:4 8}
+.bus-stop{
+  position:absolute;
+  width:9px;height:9px;
+  border-radius:50%;
+  border:1px solid var(--lime);
+  background:#0b0d0a;
+  box-shadow:0 0 0 4px rgba(202,255,71,.06);
+  z-index:4;
+  animation:stopPulse 2.4s ease-in-out infinite;
+}
+.stop-a{left:10%;top:68%}.stop-b{left:31%;top:32%;animation-delay:-.6s}
+.stop-c{left:59%;top:50%;animation-delay:-1.2s}.stop-d{right:9%;top:63%;animation-delay:-1.8s}
+.bus-vehicle{
+  position:absolute;
+  z-index:6;
+  left:7%;top:64%;
+  padding:4px 6px;
+  border:1px solid rgba(202,255,71,.8);
+  background:rgba(8,10,8,.92);
+  color:var(--lime);
+  font:7px "DM Mono";
+  letter-spacing:.08em;
+  box-shadow:0 0 15px rgba(202,255,71,.14);
+  animation:busTravel 5s cubic-bezier(.45,.05,.55,.95) infinite;
+}
+.bus-arrow{
+  position:absolute!important;
+  left:50%!important;top:43%!important;
+  font:600 52px/1 "Space Grotesk"!important;
+  color:var(--lime);
+  text-shadow:0 0 22px rgba(202,255,71,.2);
+  z-index:5;
+  animation:busArrow 2.8s ease-in-out infinite;
+}
+.bus>b{z-index:7}
+.bus-meta{
+  position:absolute;
+  left:25px;bottom:20px;
+  z-index:7;
+  color:#777;
+  font:8px "DM Mono";
+  letter-spacing:.08em;
+}
+@keyframes routeFlow{
+  to{stroke-dashoffset:-.06}
+}
+@keyframes stopPulse{
+  50%{transform:scale(1.35);box-shadow:0 0 0 7px rgba(202,255,71,.03),0 0 18px rgba(202,255,71,.25)}
+}
+@keyframes busTravel{
+  0%{left:7%;top:64%}
+  22%{left:29%;top:32%}
+  48%{left:50%;top:50%}
+  72%{left:70%;top:42%}
+  100%{left:84%;top:61%}
+}
+@keyframes busArrow{
+  0%,100%{transform:translate(0,5px);opacity:.45}
+  50%{transform:translate(8px,-5px);opacity:1}
+}
+
+/* --- FORECASTING / MODEL OUTPUT --- */
+.project-visual.forecast{
+  padding:0;
+  display:block;
+  background:
+    radial-gradient(circle at 75% 35%,rgba(202,255,71,.10),transparent 28%),
+    linear-gradient(145deg,#080b08,#11150e);
+}
+.forecast-head{
+  position:absolute;
+  left:40px;right:40px;top:32px;
+  display:flex;align-items:baseline;justify-content:space-between;
+  z-index:5;
+}
+.forecast-head>span{
+  position:static;
+  font:800 clamp(35px,4.5vw,67px)/.85 "Space Grotesk";
+  letter-spacing:-.08em;
+}
+.forecast-head small{
+  position:static;
+  font:8px "DM Mono";
+  color:#777;
+  letter-spacing:.1em;
+}
+.forecast-grid{
+  position:absolute;
+  left:40px;right:40px;top:90px;bottom:40px;
+  background:
+    linear-gradient(rgba(202,255,71,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(202,255,71,.035) 1px,transparent 1px);
+  background-size:100% 28px,42px 100%;
+  mask-image:linear-gradient(to bottom,#000,transparent);
+}
+.forecast .chart{
+  position:absolute;
+  left:40px;right:40px;bottom:35px;
+  width:auto;max-width:none;
+  height:145px;
+  display:flex;
+  align-items:end;
+  gap:8px;
+  z-index:2;
+}
+.forecast .chart i{
+  min-width:0;
+  height:100%;
+  border-radius:2px 2px 0 0;
+  clip-path:none;
+  background:linear-gradient(to top,rgba(202,255,71,.10),rgba(202,255,71,.78));
+  transform-origin:bottom;
+  animation:forecastBars 2.8s ease-in-out infinite alternate;
+}
+.forecast .chart i:nth-child(1){height:38%;animation-delay:-.1s}
+.forecast .chart i:nth-child(2){height:55%;animation-delay:-.4s}
+.forecast .chart i:nth-child(3){height:47%;animation-delay:-.7s}
+.forecast .chart i:nth-child(4){height:72%;animation-delay:-1s}
+.forecast .chart i:nth-child(5){height:61%;animation-delay:-1.3s}
+.forecast .chart i:nth-child(6){height:84%;animation-delay:-1.6s}
+.forecast .chart i:nth-child(7){height:96%;animation-delay:-1.9s}
+.forecast-line{
+  position:absolute;
+  left:40px;right:40px;bottom:38px;
+  width:calc(100% - 80px);
+  height:150px;
+  z-index:4;
+  overflow:visible;
+}
+.forecast-line path{
+  fill:none;
+  stroke:#f1f1ec;
+  stroke-width:2;
+  vector-effect:non-scaling-stroke;
+  stroke-linecap:round;
+  stroke-dasharray:12 10;
+  animation:forecastLine 4.5s linear infinite;
+  filter:drop-shadow(0 0 5px rgba(202,255,71,.28));
+}
+.forecast-pulse{
+  position:absolute;
+  width:9px;height:9px;
+  border-radius:50%;
+  background:var(--lime);
+  box-shadow:0 0 0 5px rgba(202,255,71,.08),0 0 20px rgba(202,255,71,.55);
+  right:11%;top:46%;
+  z-index:6;
+  animation:forecastPulse 2.2s ease-in-out infinite;
+}
+.forecast-models{
+  position:absolute!important;
+  left:40px!important;bottom:18px!important;
+  color:#777!important;
+  font:8px "DM Mono"!important;
+  z-index:7;
+}
+@keyframes forecastBars{
+  from{transform:scaleY(.68);opacity:.45}
+  to{transform:scaleY(1);opacity:.9}
+}
+@keyframes forecastLine{to{stroke-dashoffset:-44}}
+@keyframes forecastPulse{
+  0%,100%{transform:scale(.8);opacity:.35}
+  50%{transform:scale(1.5);opacity:1}
+}
+
+/* --- NEXUS ACADEMY / DIGITAL PRODUCT --- */
+.project-visual.nexus{
+  padding:0;
+  display:block;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 70% 45%,rgba(255,64,92,.18),transparent 28%),
+    linear-gradient(135deg,#12090c,#0b0b0a 62%);
+}
+.nexus-grid{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(255,64,92,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,64,92,.035) 1px,transparent 1px);
+  background-size:34px 34px;
+  mask-image:radial-gradient(circle at 70% 45%,#000,transparent 70%);
+}
+.nexus-orbit{
+  position:absolute;
+  border:1px solid rgba(255,64,92,.42);
+  border-radius:50%;
+  left:57%;top:50%;
+  transform:translate(-50%,-50%) rotate(-15deg);
+  animation:nexusSpin 14s linear infinite;
+}
+.orbit-a{width:230px;height:130px}
+.orbit-b{width:155px;height:230px;transform:translate(-50%,-50%) rotate(38deg);animation-direction:reverse;animation-duration:10s}
+.nexus-orbit:after{
+  content:"";
+  position:absolute;
+  width:7px;height:7px;
+  border-radius:50%;
+  right:-4px;top:50%;
+  background:var(--coral);
+  box-shadow:0 0 18px rgba(255,64,92,.8);
+}
+.nexus-core{
+  position:absolute;
+  left:57%;top:50%;
+  width:82px;height:82px;
+  transform:translate(-50%,-50%);
+  display:grid;place-items:center;
+  border:1px solid rgba(255,64,92,.65);
+  border-radius:50%;
+  background:rgba(14,8,9,.88);
+  box-shadow:0 0 45px rgba(255,64,92,.10),inset 0 0 25px rgba(255,64,92,.06);
+  z-index:4;
+  animation:nexusCore 3s ease-in-out infinite;
+}
+.nexus-core span{font:800 38px "Space Grotesk";color:rgba(255,64,92,.82)}
+.nexus>span{
+  position:absolute;
+  left:40px;bottom:48px;
+  font:900 clamp(48px,7vw,105px)/.8 "Space Grotesk";
+  color:var(--coral);
+  letter-spacing:-.1em;
+  z-index:6;
+}
+.nexus>b{
+  position:absolute;
+  left:42px;bottom:22px;
+  font:600 22px "Space Grotesk";
+  color:#eee;
+  z-index:6;
+}
+.nexus>small{
+  position:absolute!important;
+  right:24px!important;top:24px!important;
+  color:var(--lime)!important;
+  font:8px "DM Mono"!important;
+  z-index:7;
+}
+.nexus-particle{
+  position:absolute;
+  width:4px;height:4px;
+  border-radius:50%;
+  background:var(--coral);
+  box-shadow:0 0 12px rgba(255,64,92,.7);
+  z-index:5;
+}
+.p1{left:47%;top:28%;animation:nexusParticle1 5s ease-in-out infinite}
+.p2{left:78%;top:65%;animation:nexusParticle2 6s ease-in-out infinite}
+.p3{left:63%;top:18%;animation:nexusParticle3 4.5s ease-in-out infinite}
+@keyframes nexusSpin{to{transform:translate(-50%,-50%) rotate(345deg)}}
+@keyframes nexusCore{50%{transform:translate(-50%,-50%) scale(1.06);box-shadow:0 0 65px rgba(255,64,92,.16)}}
+@keyframes nexusParticle1{50%{transform:translate(35px,22px);opacity:.35}}
+@keyframes nexusParticle2{50%{transform:translate(-28px,-35px);opacity:.45}}
+@keyframes nexusParticle3{50%{transform:translate(20px,30px);opacity:.3}}
+
+/* Keep project-cover animation visible on both desktop and mobile. */
+.project-visual.vision *,
+.project-visual.bus *,
+.project-visual.forecast *,
+.project-visual.nexus *{
+  animation-play-state:running;
+}
+@media(max-width:900px){
+  .project-visual{height:265px}
+  .project-visual.vision>span{font-size:62px}
+  .vision-box.box-a{width:150px;height:94px;left:calc(50% - 75px);top:calc(50% - 47px)}
+  .vision-box.box-b{width:72px;height:58px;left:calc(50% + 42px);top:calc(50% - 68px)}
+  .vision-scan{left:7%;right:7%}
+  .bus-map{inset:28px 18px 35px;width:calc(100% - 36px);height:calc(100% - 63px)}
+  .bus-arrow{font-size:44px!important}
+  .bus-meta{left:18px;bottom:16px}
+  .forecast-head{left:22px;right:22px;top:22px}
+  .forecast-head>span{font-size:42px}
+  .forecast-head small{font-size:7px}
+  .forecast-grid{left:22px;right:22px;top:72px;bottom:30px}
+  .forecast .chart{left:22px;right:22px;bottom:27px;height:105px;gap:5px}
+  .forecast-line{left:22px;bottom:30px;width:calc(100% - 44px);height:110px}
+  .forecast-models{left:22px!important;bottom:12px!important;font-size:7px!important}
+  .forecast-pulse{right:10%;top:42%}
+  .nexus-orbit.orbit-a{width:170px;height:100px}
+  .nexus-orbit.orbit-b{width:110px;height:170px}
+  .nexus-core{width:66px;height:66px}
+  .nexus-core span{font-size:30px}
+  .nexus>span{left:22px;bottom:42px;font-size:58px}
+  .nexus>b{left:24px;bottom:19px;font-size:18px}
+  .nexus>small{right:18px!important;top:18px!important}
 }

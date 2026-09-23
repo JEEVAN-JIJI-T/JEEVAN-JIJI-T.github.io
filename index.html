@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260923-mobile-final">
+<link rel="stylesheet" href="styles.css?v=20260923-v9">
 </head>
 <body>
 <div class="loader"><div class="loader-mark">JJT<span>●</span></div><div class="loader-bar"></div><small>INITIALIZING EXPERIENCE</small></div>
@@ -74,12 +74,45 @@
   <small class="section-label">02 / SELECTED WORK</small>
   <div class="work-head"><h2>Ideas become<br><em>systems.</em></h2><p>Projects where engineering meets experimentation — each one a different way of turning a concept into something tangible.</p></div>
   <div class="projects">
-    <article class="project featured"><div class="project-number">01</div><div class="project-visual vision"><span>YOLO</span><i></i><b>VISION</b></div><div class="project-info"><div class="tags"><span>COMPUTER VISION</span><span>AI</span><span>ACCESSIBILITY</span></div><h3>Obstacle Detection</h3><p>Computer vision concept for identifying obstacles for visually impaired users using YOLOv3, TensorFlow and React.</p><div class="stack">Python · TensorFlow · YOLOv3 · React</div></div></article>
+    <article class="project featured"><div class="project-number">01</div><div class="project-visual vision">
+  <span>YOLO</span>
+  <div class="vision-box box-a"><i></i><em>PERSON 0.96</em></div>
+  <div class="vision-box box-b"><i></i><em>OBJECT 0.91</em></div>
+  <div class="vision-scan"></div>
+  <b>VISION / LIVE</b>
+</div><div class="project-info"><div class="tags"><span>COMPUTER VISION</span><span>AI</span><span>ACCESSIBILITY</span></div><h3>Obstacle Detection</h3><p>Computer vision concept for identifying obstacles for visually impaired users using YOLOv3, TensorFlow and React.</p><div class="stack">Python · TensorFlow · YOLOv3 · React</div></div></article>
     <article class="project"><div class="project-number">02</div><div class="project-visual face"><span>LIVE</span><span>RECOGNITION</span><div class="faces"><i></i><i></i><i></i></div><small>REAL-TIME</small></div><div class="project-info"><div class="tags"><span>DEEP LEARNING</span><span>REAL-TIME</span></div><h3>Face & Body Recognition</h3><p>A live-camera recognition experiment using YOLOv8 and computer vision workflows.</p><div class="stack">Python · YOLOv8 · Computer Vision</div></div></article>
-    <article class="project"><div class="project-number">03</div><div class="project-visual bus"><span>↗</span><b>ROUTE / 01</b></div><div class="project-info"><div class="tags"><span>FLUTTER</span><span>SQL</span><span>TEAM LEAD</span></div><h3>Bus Mapping Tool</h3><p>Led a three-person team through product design, mapping, backend work and implementation.</p><div class="stack">Flutter · SQL · Figma · Backend</div></div></article>
+    <article class="project"><div class="project-number">03</div><div class="project-visual bus">
+  <svg class="bus-map" viewBox="0 0 600 300" aria-hidden="true">
+    <path class="route route-bg" d="M55 220 C125 80 190 250 275 150 S430 50 545 205"/>
+    <path class="route route-main" pathLength="1" d="M55 220 C125 80 190 250 275 150 S430 50 545 205"/>
+    <path class="route route-alt" d="M55 220 L180 205 L275 150 L390 175 L545 205"/>
+  </svg>
+  <span class="bus-arrow">↗</span>
+  <div class="bus-stop stop-a"></div><div class="bus-stop stop-b"></div><div class="bus-stop stop-c"></div><div class="bus-stop stop-d"></div>
+  <div class="bus-vehicle">BUS</div>
+  <b>ROUTE / LIVE</b>
+  <small class="bus-meta">01 → 07 · ETA 04 MIN</small>
+</div><div class="project-info"><div class="tags"><span>FLUTTER</span><span>SQL</span><span>TEAM LEAD</span></div><h3>Bus Mapping Tool</h3><p>Led a three-person team through product design, mapping, backend work and implementation.</p><div class="stack">Flutter · SQL · Figma · Backend</div></div></article>
     <article class="project"><div class="project-number">04</div><div class="project-visual game"><span>OPEN<br>WORLD</span><i></i><small>UNITY × BLENDER</small></div><div class="project-info"><div class="tags"><span>GAME DEV</span><span>3D</span></div><h3>Open World Game</h3><p>An interactive 3D experiment combining Unity development with Blender asset creation.</p><div class="stack">Unity · Blender</div></div></article>
-    <article class="project wide"><div class="project-number">05</div><div class="project-visual forecast"><span>FORECAST</span><div class="chart"><i></i></div><small>ARIMA · SARIMA · PROPHET · LSTM</small></div><div class="project-info"><div class="tags"><span>TIME SERIES</span><span>ML</span><span>STREAMLIT</span></div><h3>Enhanced Forecasting</h3><p>A multi-model forecasting pipeline combining ARIMA, SARIMA, Prophet and hybrid LSTM approaches with feature engineering and an interactive Streamlit layer.</p><div class="stack">Python · Prophet · LSTM · yfinance · Plotly</div></div></article>
-    <article class="project wide"><div class="project-number">06</div><div class="project-visual nexus"><span>NEXUS</span><b>ACADEMY</b><i></i><small>DIGITAL EXPERIENCE</small></div><div class="project-info"><div class="tags"><span>WEB</span><span>PRODUCT</span><span>DEPLOYMENT</span></div><h3>NEXUS Academy</h3><p>A student-growth web experience with responsive UI, content, gallery, enquiries and deployment workflows.</p><div class="stack">Flask · Tailwind · JavaScript · Formspree · Git</div></div></article>
+    <article class="project wide"><div class="project-number">05</div><div class="project-visual forecast">
+  <div class="forecast-head"><span>FORECAST</span><small>MODEL / ENSEMBLE</small></div>
+  <div class="forecast-grid"></div>
+  <div class="chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <svg class="forecast-line" viewBox="0 0 600 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 175 C65 165 80 130 135 145 S210 115 260 128 S335 82 390 105 S470 55 600 42"/>
+  </svg>
+  <div class="forecast-pulse"></div>
+  <small class="forecast-models">ARIMA · SARIMA · PROPHET · LSTM</small>
+</div><div class="project-info"><div class="tags"><span>TIME SERIES</span><span>ML</span><span>STREAMLIT</span></div><h3>Enhanced Forecasting</h3><p>A multi-model forecasting pipeline combining ARIMA, SARIMA, Prophet and hybrid LSTM approaches with feature engineering and an interactive Streamlit layer.</p><div class="stack">Python · Prophet · LSTM · yfinance · Plotly</div></div></article>
+    <article class="project wide"><div class="project-number">06</div><div class="project-visual nexus">
+  <div class="nexus-grid"></div>
+  <div class="nexus-orbit orbit-a"></div>
+  <div class="nexus-orbit orbit-b"></div>
+  <div class="nexus-core"><span>N</span></div>
+  <div class="nexus-particle p1"></div><div class="nexus-particle p2"></div><div class="nexus-particle p3"></div>
+  <span>NEXUS</span><b>ACADEMY</b><small>DIGITAL EXPERIENCE</small>
+</div><div class="project-info"><div class="tags"><span>WEB</span><span>PRODUCT</span><span>DEPLOYMENT</span></div><h3>NEXUS Academy</h3><p>A student-growth web experience with responsive UI, content, gallery, enquiries and deployment workflows.</p><div class="stack">Flask · Tailwind · JavaScript · Formspree · Git</div></div></article>
   </div>
 </section>
 
@@ -98,6 +131,6 @@
 <section id="contact" class="section contact"><div class="contact-inner"><small class="section-label">06 / CONTACT</small><h2>Have a problem<br><em>worth building?</em></h2><p class="contact-sub">Open to opportunities, collaborations and interesting problems where technology can create measurable value.</p><div class="contact-actions"><a class="big-link" href="mailto:jeevanjijithomas.14@gmail.com">jeevanjijithomas.14@gmail.com <span>↗</span></a><button class="copy-link" data-copy="jeevanjijithomas.14@gmail.com">Copy email</button></div><div class="footer-row"><span>JEEVAN JIJI THOMAS</span><span>© 2026 · BUILT WITH CURIOSITY</span></div></div></section>
 </main>
 <div class="toast">EMAIL COPIED</div>
-<script src="script.js?v=20260923-mobile-final"></script>
+<script src="script.js?v=20260923-v9"></script>
 </body>
 </html>

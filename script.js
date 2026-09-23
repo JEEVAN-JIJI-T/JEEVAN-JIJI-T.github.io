@@ -4,24 +4,8 @@ const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fine=matchMedia('(pointer:fine)').matches;
 
 /* mobile navigation */
-menu?.addEventListener('click',()=>{
-  const open=nav.classList.toggle('open');
-  menu.setAttribute('aria-expanded',String(open));
-});
-menu?.setAttribute('aria-expanded','false');
-addEventListener('keydown',e=>{
-  if(e.key==='Escape' && nav?.classList.contains('open')){
-    nav.classList.remove('open');
-    menu?.setAttribute('aria-expanded','false');
-  }
-});
-addEventListener('resize',()=>{
-  if(innerWidth>900 && nav?.classList.contains('open')){
-    nav.classList.remove('open');
-    menu?.setAttribute('aria-expanded','false');
-  }
-});
-qa('.nav nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false')}));
+menu?.addEventListener('click',()=>nav.classList.toggle('open'));
+qa('.nav nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
 
 /* V9 LAYERED ORBIT
@@ -40,7 +24,7 @@ const orbitLayers=[
 ];
 
 // One revolution is now deliberately slow: ~42 seconds.
-const ORBIT_PERIOD=matchMedia('(max-width:900px)').matches ? 52 : 42;
+const ORBIT_PERIOD=42;
 let orbitLast=performance.now();
 let orbitPhase=0;
 
@@ -201,7 +185,7 @@ qa('.copy-link').forEach(btn=>btn.addEventListener('click',async()=>{
 const c=q('#particles'),ctx=c.getContext('2d');let W,H,pts=[];
 function size(){
   const d=devicePixelRatio||1; W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;c.style.width=W+'px';c.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);
-  const count=innerWidth<=600?35:75; pts=Array.from({length:count},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,r:Math.random()*1.2+.35}));
+  pts=Array.from({length:75},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,r:Math.random()*1.2+.35}));
 }
 function draw(){
   ctx.clearRect(0,0,W,H);
