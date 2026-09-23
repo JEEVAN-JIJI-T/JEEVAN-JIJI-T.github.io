@@ -724,3 +724,106 @@ a{color:inherit}#particles{position:fixed;inset:0;width:100%;height:100%;z-index
   .nexus>b{left:24px;bottom:19px;font-size:18px}
   .nexus>small{right:18px!important;top:18px!important}
 }
+
+/* =========================================================
+   FINAL HERO DEPTH + DESKTOP MOTION FIX
+   Orbit sits behind the hero copy. A black directional fade
+   separates the orbital system from the readable text.
+========================================================= */
+.hero-orbit{
+  z-index:2;
+}
+.hero-copy{
+  position:relative;
+  z-index:10;
+}
+.hero-orbit::after{
+  content:"";
+  position:absolute;
+  z-index:8;
+  pointer-events:none;
+  left:-42%;
+  top:0;
+  width:68%;
+  height:100%;
+  background:linear-gradient(90deg,
+    rgba(7,7,7,1) 0%,
+    rgba(7,7,7,.98) 24%,
+    rgba(7,7,7,.88) 52%,
+    rgba(7,7,7,.38) 78%,
+    rgba(7,7,7,0) 100%);
+}
+/* Keep the orbital core/nodes above the separation fade. */
+.hero-orbit .orbit-track,
+.hero-orbit .orbit-ring,
+.hero-orbit .orbit-axis,
+.hero-orbit .orbit-halo,
+.hero-orbit .core,
+.hero-orbit .satellite,
+.hero-orbit label{
+  position:absolute;
+}
+.hero-orbit .orbit-track{z-index:10}
+.hero-orbit .core{z-index:6}
+.hero-orbit .orbit-ring{z-index:1}
+.hero-orbit .orbit-axis{z-index:2}
+.hero-orbit .orbit-halo{z-index:0}
+.hero-orbit .satellite{z-index:3}
+.hero-orbit label{z-index:11}
+
+/* Desktop/tablet: make project motion independent of the browser's
+   reduced-motion setting. These project covers are decorative UI
+   previews and remain animated; the rest of the site still respects
+   the user's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce){
+  .project-visual.vision .vision-box,
+  .project-visual.vision .vision-scan,
+  .project-visual.face::after,
+  .project-visual.face .faces i,
+  .project-visual.bus .route-main,
+  .project-visual.bus .bus-stop,
+  .project-visual.bus .bus-vehicle,
+  .project-visual.bus .bus-arrow,
+  .project-visual.forecast .chart i,
+  .project-visual.forecast .forecast-line path,
+  .project-visual.forecast .forecast-pulse,
+  .project-visual.nexus .nexus-orbit,
+  .project-visual.nexus .nexus-core,
+  .project-visual.nexus .nexus-particle{
+    animation-play-state:running!important;
+    animation-iteration-count:infinite!important;
+  }
+  .project-visual.vision .vision-box{animation-name:visionBoxFloat!important;animation-duration:4.8s!important}
+  .project-visual.vision .vision-scan{animation-name:visionScan!important;animation-duration:3.4s!important}
+  .project-visual.face::after{animation-name:faceScan!important;animation-duration:3.2s!important}
+  .project-visual.face .faces i{animation-name:facePulse!important;animation-duration:3.4s!important}
+  .project-visual.bus .route-main{animation-name:routeFlow!important;animation-duration:5s!important}
+  .project-visual.bus .bus-stop{animation-name:stopPulse!important;animation-duration:2.4s!important}
+  .project-visual.bus .bus-vehicle{animation-name:busTravel!important;animation-duration:5s!important}
+  .project-visual.bus .bus-arrow{animation-name:busArrow!important;animation-duration:2.8s!important}
+  .project-visual.forecast .chart i{animation-name:forecastBars!important;animation-duration:2.8s!important}
+  .project-visual.forecast .forecast-line path{animation-name:forecastLine!important;animation-duration:4.5s!important}
+  .project-visual.forecast .forecast-pulse{animation-name:forecastPulse!important;animation-duration:2.2s!important}
+  .project-visual.nexus .nexus-orbit{animation-name:nexusSpin!important;animation-duration:14s!important}
+  .project-visual.nexus .nexus-core{animation-name:nexusCore!important;animation-duration:3s!important}
+  .project-visual.nexus .nexus-particle.p1{animation-name:nexusParticle1!important;animation-duration:5s!important}
+  .project-visual.nexus .nexus-particle.p2{animation-name:nexusParticle2!important;animation-duration:6s!important}
+  .project-visual.nexus .nexus-particle.p3{animation-name:nexusParticle3!important;animation-duration:4.5s!important}
+}
+
+/* Mobile hero: keep the orbit behind the copy and make the separator
+   softer so the composition remains readable on narrow screens. */
+@media (max-width:900px){
+  .hero-copy{z-index:12}
+  .hero-orbit{z-index:2;opacity:.72}
+  .hero-orbit::after{
+    left:-28%;
+    width:58%;
+    background:linear-gradient(90deg,
+      rgba(7,7,7,1) 0%,
+      rgba(7,7,7,.97) 38%,
+      rgba(7,7,7,.70) 72%,
+      rgba(7,7,7,0) 100%);
+  }
+  .project-visual{height:245px}
+}
